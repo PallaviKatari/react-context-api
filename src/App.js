@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Components/Header";
+import Child from "./Components/Child";
+import Footer from "./Components/Footer";
+import { ThemeContext } from "./Components/themeContext";
+import React from "react";
+import "./App.css";
 
 function App() {
+  const { toggle } = React.useContext(ThemeContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={toggle ? "theme" : "theme1"}>
+      <Header />
+      <h2>REACT CONTEXT API DEMO</h2>
+      <p>
+        Scenario 1 - James Bond 007 passed from ContextProvider Component to WelcomePage,Consumer1,Consumer2<br />
+        Scenario 2 - Change of theme passed from themContextProvider to Header,Footer and Child(which in turn has the ContextProvider as nested component)
+      </p>
+      <Child />
+      <Footer />
     </div>
   );
 }
