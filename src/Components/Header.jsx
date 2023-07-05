@@ -8,7 +8,7 @@ function Header() {
       style={
         toggle
           ? { background: "pink", color: "blue" }
-          : { background: "orange" }
+          : { background: "green" }
       }>
       <h3>Header Component</h3>
     </div>
